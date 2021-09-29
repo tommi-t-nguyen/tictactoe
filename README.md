@@ -17,7 +17,7 @@ Our project can be found [here.](https://tommi267.github.io/tictactoe/)
 
 ## Demonstration
 
-Access a demonstration of this project ![TicTacToe](https://user-images.githubusercontent.com/54600612/135186881-6ed48933-1ca1-4cc0-9ceb-5c785a951a39.gif)
+![TicTacToe](https://user-images.githubusercontent.com/54600612/135186881-6ed48933-1ca1-4cc0-9ceb-5c785a951a39.gif)
 
 ## Features to be Added
 
