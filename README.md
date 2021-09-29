@@ -1,6 +1,6 @@
 # ❌Tic-Tac-Toe⭕️
 
-Our project can be found [here.](https://tommi267.github.io/tictactoe/)
+Project can be found [here.](https://tommi267.github.io/tictactoe/)
 
 ## Abstract
 
