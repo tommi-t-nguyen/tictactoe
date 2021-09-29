@@ -2,12 +2,14 @@ var gameBoard = document.querySelector('.game-grid');
 var player1Score = document.querySelector('#player1Score');
 var player2Score = document.querySelector('#player2Score');
 var gameStatus = document.querySelector('#gameStatus');
-var box = document.querySelectorAll('.box');
+var box = document.querySelectorAll('.box')
+var resetBtn = document.querySelector('#resetBtn');
 
 var game = new Game();
 
 window.addEventListener('load', displayPlayerWins)
 gameBoard.addEventListener('click', gameBoardHandler);
+resetBtn.addEventListener('click',reset);
 
 function displayPlayerWins() {
   displayGameStatus(game.currentTurn)
@@ -28,23 +30,23 @@ function gameBoardHandler(e) {
 
 function updateBoardDisplay() {
   for (var i = 0; i < box.length; i++) {
-    box[i].innerText = game.boxes[i];
+    box[i].innerHTML = `<span>${game.boxes[i]}</span>`;
   }
 }
 
 function displayGameStatus(playerNum) {
-  if((playerNum === 1 || playerNum === 2) && game.tie && !game.gameWon){
+  if(game.tie && !game.gameWon){
     gameStatus.innerText = `TIE GAME 😱`;
   }
   if(playerNum === 1 && !game.gameWon && !game.tie){
-    gameStatus.innerText = `It's ${game.player1.emoji}'s turn`;
-  }else if (playerNum === 2 && !game.gameWon){
-    gameStatus.innerText = `It's ${game.player2.emoji}'s turn`
+    gameStatus.innerHTML = `It's <span>${game.player1.emoji}</span> 's turn`;
+  }else if (playerNum === 2 && !game.gameWon && !game.tie){
+    gameStatus.innerHTML = `It's <span>${game.player2.emoji}</span>'s turn`
   }
   if(playerNum === 2 && game.gameWon ){
-    gameStatus.innerText = `${game.player1.emoji} WINS!!!`;
+    gameStatus.innerHTML = `<span>${game.player1.emoji}</span> WINS!!!`;
   }else if(playerNum === 1 && game.gameWon){
-    gameStatus.innerText = `${game.player2.emoji} WINS!!!`
+    gameStatus.innerHTML = `<span>${game.player2.emoji}</span> WINS!!!`
   }
 
 
@@ -59,6 +61,12 @@ function wipeBoard() {
 function newGame() {
   game.resetGame();
   updateBoardDisplay();
+  displayPlayerWins();
   displayGameStatus(game.currentTurn);
 
+}
+
+function reset(){
+  localStorage.clear();
+  newGame();
 }

@@ -1,38 +1,50 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 25px;
   height: 100%;
   display: flex;
   font-size: 30px;
-  background-color: blue;
+  background-color: Darkgrey;
 
 }
-
+h2,span{
+  color: transparent;
+  text-shadow: 0 0 0 black;
+}
 .game-board-main {
+  margin-top:100px;
   width: 50%;
-  height: 100vh;
+  height: 75vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background: grey;
+  border-radius: 25px;
 }
-
+button {
+  border-radius: 12px;
+  font-size:20px;
+  padding: 10px 24px;
+}
 .player-1-column, .player-2-column {
   width: 25%;
-  height: 100vh;
+  height: 25vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  align-self: center;
+
 }
 
 .game-grid {
   position: relative;
   display: grid;
-  gap: 1.5%;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  background-color: black;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 5px;
+  background: Darkgrey;
+
 }
 
 .box {
@@ -42,6 +54,6 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: white;
   font-size: 60px;
+  background: grey;
 }
